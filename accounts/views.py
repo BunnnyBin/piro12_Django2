@@ -9,7 +9,7 @@ from django.views.generic import CreateView
 def profile(request):
     return render(request, 'accounts/profile.html')
 
-'''
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -21,8 +21,9 @@ def signup(request):
     return render(request, 'accounts/signup.html', {
         'form': form,
     })
-'''
 
+'''
 signup = CreateView.as_view(model=User, form_class=UserCreationForm,
                             success_url='settings.LOGIN_URL',
                             template_name='accounts/signup.html')
+'''
